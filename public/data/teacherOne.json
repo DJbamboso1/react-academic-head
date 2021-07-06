@@ -1,0 +1,9 @@
+{
+    "id": 1,
+    "name": "Nguyễn Văn A",
+    "departmentId": 3,
+    "lectureType": 1,
+    "minCourse": 5,
+    "maxCourse": 1,
+    "status": 1
+}

@@ -1,0 +1,71 @@
+[
+    {
+        "status": 0,
+        "subjectCode": "Code01",
+        "id": "SUB01",
+        "subjectName": "Thiết kế dữ liệu"
+      },
+      {
+        "status": 1,
+        "subjectCode": "Code02",
+        "id": "SUB02",
+        "subjectName": "Kiến trúc phần mềm"
+     },
+      {
+         "status": 0,
+         "subjectCode": "Code03",
+         "id": "SUB03",
+         "subjectName": "Môn 3"
+      },
+      {
+         "status": 1,
+         "subjectCode": "Code04",
+         "id": "SUB04",
+         "subjectName": "Môn 4"
+      },
+      {
+         
+         "status": 1,
+         "subjectCode": "Code5",
+         "id": "SUB05",
+         "subjectName": "Môn 5"
+      },
+      {
+         
+         "status": 1,
+         "subjectCode": "Code06",
+         "id": "SUB06",
+         "subjectName": "Môn 6"
+      },
+      {
+         
+         "status": 1,
+         "subjectCode": "Code07",
+         "id": "SUB07",
+         "subjectName": "Môn 7"
+      },
+      {
+         "status": 0,
+         "subjectCode": "Code08",
+         "id": "SUB08",
+         "subjectName": "Môn 8"
+      },
+      { 
+         "status": 1,
+         "subjectCode": "Code09",
+         "id": "SUB09",
+         "subjectName": "Môn 9"
+      },
+      {      
+         "status": 0,
+         "subjectCode": "Code10",
+         "id": "SUB010",
+         "subjectName": "Môn 10"
+      },
+      {     
+         "status": 1,
+         "subjectCode": "Code11",
+         "id": "SUB11",
+         "subjectName": "Môn 11"
+      }
+]

@@ -1,0 +1,117 @@
+[
+    {
+      "status": "Available",
+      "subjectCode": "Code01",
+      "subjectId": "SUB01",
+      "subjectName": "Thiết kế dữ liệu",
+      
+       "registerLecturers": [
+          {
+             "lecId": "LEC01",
+             "lecName": "Nguyễn Văn A",
+             "lecRating": 2,
+             "lecStatus": "available",
+             "lecType": "Cơ hữu"
+          },
+          {
+             "lecId": "LEC02",
+             "lecName": "Nguyễn Văn B",
+             "lecRating": 3,
+             "lecStatus": "available",
+             "lecType": "Cơ hữu"
+          }
+       ]
+    },
+    {
+      "status": "Available",
+      "subjectCode": "Code02",
+      "subjectId": "SUB02",
+      "subjectName": "Kiến trúc phần mềm",
+      "registerLecturers": [
+         {
+            "lecId": "LEC01",
+            "lecName": "Nguyễn Văn A",
+            "lecRating": 2,
+            "lecStatus": "available",
+            "lecType": "Cơ hữu"
+         },
+         {
+            "lecId": "LEC03",
+            "lecName": "Nguyễn Văn C",
+            "lecRating": 4,
+            "lecStatus": "available",
+            "lecType": "Thỉnh giảng"
+         },
+         {
+            "lecId": "LEC04",
+            "lecName": "Nguyễn Văn D",
+            "lecRating": 5,
+            "lecStatus": "available",
+            "lecType": "Cơ hữu"
+         }
+      ]  
+   },
+    {
+       "status": "Available",
+       "subjectCode": "Code03",
+       "subjectId": "SUB03",
+       "subjectName": "Môn 3",
+       "registerLecturers": []
+    },
+    {
+       "status": "Available",
+       "subjectCode": "Code04",
+       "subjectId": "SUB04",
+       "registerLecturers": [],
+       "subjectName": "Môn 4"
+    },
+    {
+       "registerLecturers": [],
+       "status": "Available",
+       "subjectCode": "Code5",
+       "subjectId": "SUB05",
+       "subjectName": "Môn 5"
+    },
+    {
+       "registerLecturers": [],
+       "status": "Available",
+       "subjectCode": "Code06",
+       "subjectId": "SUB06",
+       "subjectName": "Môn 6"
+    },
+    {
+       "registerLecturers": [],
+       "status": "Available",
+       "subjectCode": "Code07",
+       "subjectId": "SUB07",
+       "subjectName": "Môn 7"
+    },
+    {
+       "registerLecturers": [],
+       "status": "Available",
+       "subjectCode": "Code08",
+       "subjectId": "SUB08",
+       "subjectName": "Môn 8"
+    },
+    {
+       "registerLecturers": [],
+       "status": "Available",
+       "subjectCode": "Code09",
+       "subjectId": "SUB09",
+       "subjectName": "Môn 9"
+    },
+    {
+       "registerLecturers": [],
+       "status": "Available",
+       "subjectCode": "Code10",
+       "subjectId": "SUB010",
+       "subjectName": "Môn 10"
+    },
+    {
+       "registerLecturers": [],
+       "status": "Available",
+       "subjectCode": "Code11",
+       "subjectId": "SUB11",
+       "subjectName": "Môn 11"
+    }
+ ]

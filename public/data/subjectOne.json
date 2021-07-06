@@ -1,0 +1,35 @@
+{
+    "status": "Available",
+    "subjectCode": "Code02",
+    "id": "SUB02",
+    "subjectName": "Kiến trúc phần mềm",
+    "teacher": [
+        {
+            "id": 1,
+            "name": "Nguyễn Vẵn A",
+            "departmentId": 5,
+            "lectureType": 0,
+            "minCourse": 7,
+            "maxCourse": 3,
+            "status": 0
+        },
+        {
+            "id": 2,
+            "name": "Nguyễn Vẵn B",
+            "departmentId": 2,
+            "lectureType": 0,
+            "minCourse": 2,
+            "maxCourse": 1,
+            "status": 1
+        },
+        {
+            "id": 3,
+            "name": "Nguyễn Vẵn C",
+            "departmentId": 5,
+            "lectureType": 0,
+            "minCourse": 1,
+            "maxCourse": 1,
+            "status": 0
+        }
+    ]
+}
