@@ -19,11 +19,12 @@ function AccountManagement() {
     let history = useHistory()
 
     useEffect(async () => {
-        setList(await accountService.get())
+        let data = await accountService.get()
+        setList(data.data)
     }, [])
 
-    console.log("account service: " + accountService.get())
-    console.log("list account: " + list)
+    // console.log("account service: " , accountService.get())
+    console.log("list account: " , list)
 
     function _rowClickHandle(row) {
         history.push(generatePath('/account/:id', row))

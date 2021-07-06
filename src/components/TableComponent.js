@@ -18,7 +18,7 @@ import IconButton from '@material-ui/core/IconButton'
 import Tooltip from '@material-ui/core/Tooltip'
 import DeleteIcon from '@material-ui/icons/Delete'
 import SearchBar from 'material-ui-search-bar'
-import { Button, Modal } from '@material-ui/core'
+import { Button, Modal, Select } from '@material-ui/core'
 
 function descendingComparator(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
@@ -232,8 +232,6 @@ function TableComponent({ header, data, title, filter = true, deleteHandle, rowC
 
     //////////////////////////////////////////
 
-    console.log('data: ' + data)
-    console.log('filterData: ' + filterData)
     const handleRequestSort = (event, property) => {
         const isAsc = orderBy === property && order === 'asc'
         setOrder(isAsc ? 'desc' : 'asc')
@@ -318,6 +316,15 @@ function TableComponent({ header, data, title, filter = true, deleteHandle, rowC
         setOpen(false)
     }
 
+    function selectChange(e, row, name) {
+        let v = parseInt(e.currentTarget.dataset.value || 0)
+
+        row[name] = v;
+        setFilterData([...filterData])
+
+
+    }
+
 
 
     const isSelected = (name) => selected.indexOf(name) !== -1
@@ -397,7 +404,20 @@ function TableComponent({ header, data, title, filter = true, deleteHandle, rowC
                                                 />
                                             </TableCell>
                                             {
-                                                header.map(e => <TableCell key={row.id} align={e.numeric ? 'right' : 'left'} onClick={(event) => rowClickHandle?.(row)}>{row[e.id]}</TableCell>)
+                                                header.map(e => {
+
+                                                    let data = row[e.id]
+                                                    if (e?.type === 'select') {
+                                                        data = <Select onClick={e => e.stopPropagation()} value={row[e.id]} onChange={a => selectChange(a, row, e.id)}>
+                                                            <option value="">Chọn giảng viên</option>
+                                                            {
+                                                                e.data.map(a => <option value={a.value}>{a.label}</option>)
+                                                            }
+                                                        </Select>
+                                                    }
+
+                                                    return <TableCell key={row.id} align={e.numeric ? 'right' : 'left'} onClick={(event) => rowClickHandle?.(row)}>{data}</TableCell>
+                                                })
                                             }
                                         </TableRow>
                                     )
@@ -421,7 +441,7 @@ function TableComponent({ header, data, title, filter = true, deleteHandle, rowC
                     onChangeRowsPerPage={handleChangeRowsPerPage}
                 />
             </Paper>
-            
+
         </div>
     )
 }
