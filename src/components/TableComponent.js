@@ -18,7 +18,11 @@ import IconButton from '@material-ui/core/IconButton'
 import Tooltip from '@material-ui/core/Tooltip'
 import DeleteIcon from '@material-ui/icons/Delete'
 import SearchBar from 'material-ui-search-bar'
-import { Button, Modal, Select } from '@material-ui/core'
+import { Button, Modal } from '@material-ui/core'
+import { palette } from '@material-ui/system';
+// import { Select } from '@material-ui/core'
+import Select from 'react-select'
+import { Translate } from '@material-ui/icons'
 
 function descendingComparator(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
@@ -47,7 +51,6 @@ function stableSort(array, comparator) {
 }
 
 
-
 function EnhancedTableHead(props) {
     const { classes, onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort, header, selectAllHandle } = props
     let [checked, setChecked] = useState(false)
@@ -64,15 +67,17 @@ function EnhancedTableHead(props) {
 
     }
     return (
-        <TableHead>
+        <TableHead className={classes.head}>
             <TableRow>
-                <TableCell padding="checkbox">
+                <TableCell padding="checkbox" >
                     <Checkbox
                         indeterminate={numSelected > 0 && numSelected < rowCount}
                         checked={rowCount > 0 && numSelected === rowCount}
                         onChange={onSelectAllClick}
                         inputProps={{ 'aria-label': 'select all' }}
                         onChange={_checked}
+                        className={classes.head}
+
                     />
                 </TableCell>
                 {header.map((headCell) => (
@@ -81,11 +86,13 @@ function EnhancedTableHead(props) {
                         align={headCell.numeric ? 'right' : 'left'}
                         padding={headCell.disablePadding ? 'none' : 'default'}
                         sortDirection={orderBy === headCell.id ? order : false}
+                        className={classes.head}
                     >
                         <TableSortLabel
                             active={orderBy === headCell.id}
                             direction={orderBy === headCell.id ? order : 'asc'}
                             onClick={createSortHandler(headCell.id)}
+                            className={classes.head}
                         >
                             {headCell.label}
                             {orderBy === headCell.id ? (
@@ -173,8 +180,8 @@ EnhancedTableToolbar.propTypes = {
 const useStyles = makeStyles((theme) => ({
     root: {
         // width: '90%',
-        display: 'flex',
-        justifyContent: 'center',
+        width: '100%',
+        margin: '0px 15px',
     },
     paper: {
         width: '100%',
@@ -202,11 +209,16 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: theme.shadows[5],
         padding: theme.spacing(2, 4, 3),
     },
+    head: {
+        backgroundColor: theme.palette.primary.main,
+        color: theme.palette.common.white,
+        fontSize: 18,
+    },
 }))
 
 
 
-function TableComponent({ header, data, title, filter = true, deleteHandle, rowClickHandle }, ref) {
+function TableComponent({ header, data, title, filter = true, deleteHandle, rowClickHandle, children }, ref) {
 
     const classes = useStyles()
     const [order, setOrder] = useState('asc')
@@ -353,8 +365,8 @@ function TableComponent({ header, data, title, filter = true, deleteHandle, rowC
                                 aria-labelledby="simple-modal-title"
                                 aria-describedby="simple-modal-description"
                             >
-                                <div className={classes.paperModal} style={{ top: '40%', left: '40%', transform: `translate(-50%, - 50%` }}>
-
+                                <div className={classes.paperModal} style={{ top: '40%', left: '50%', transform: 'translate(-50%, -50%)', width: '50%'}}>
+                                    {children}
                                 </div>
                             </Modal>
                         </>
@@ -408,12 +420,24 @@ function TableComponent({ header, data, title, filter = true, deleteHandle, rowC
 
                                                     let data = row[e.id]
                                                     if (e?.type === 'select') {
-                                                        data = <Select onClick={e => e.stopPropagation()} value={row[e.id]} onChange={a => selectChange(a, row, e.id)}>
-                                                            <option value="">Chọn giảng viên</option>
-                                                            {
-                                                                e.data.map(a => <option value={a.value}>{a.label}</option>)
-                                                            }
-                                                        </Select>
+                                                        // data = <Select onClick={e => e.stopPropagation()} value={row[e.id]} onChange={a => selectChange(a, row, e.id)}>
+                                                        //     <option value="">Chọn giảng viên</option>
+                                                        //     {
+                                                        //         e.data.map(a => <option value={a.value}>{a.label}</option>)
+                                                        //     }
+                                                        // </Select>
+                                                        data = <Select
+                                                            className="basic-single"
+                                                            classNamePrefix="select"
+                                                            defaultValue={row[e.id]}
+                                                            isClearable={false}
+                                                            isSearchable={true}
+                                                            name="role"
+                                                            options={e.data}
+                                                            onClick={e => e.stopPropagation()}
+                                                            onChange={a => selectChange(a, row, e.id)}
+                                                        />
+
                                                     }
 
                                                     return <TableCell key={row.id} align={e.numeric ? 'right' : 'left'} onClick={(event) => rowClickHandle?.(row)}>{data}</TableCell>

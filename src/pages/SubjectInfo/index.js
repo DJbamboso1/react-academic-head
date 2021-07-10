@@ -22,7 +22,7 @@ import teacherService from '../../service/teacher';
 
 
 const headCells = [
-    { id: 'id', numeric: true, disablePadding: true, label: 'Code' },
+    // { id: 'id', numeric: true, disablePadding: true, label: 'Code' },
     { id: 'name', numeric: false, disablePadding: false, label: 'Họ và tên' },
     { id: 'departmentId', numeric: true, disablePadding: false, label: 'Mã phòng ban' },
     { id: 'lectureType', numeric: true, disablePadding: false, label: 'Loại giảng viên' },

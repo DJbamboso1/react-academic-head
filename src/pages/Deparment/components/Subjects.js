@@ -68,6 +68,7 @@ export default function Subjects({ registerLecturers, status, subjectCode, subje
                                         <TableCell align="left">Trạng thái</TableCell>
                                         <TableCell align="left">Đánh giá</TableCell>
                                         <TableCell></TableCell>
+                                        {/* <TableCell></TableCell> */}
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>

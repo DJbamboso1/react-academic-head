@@ -6,30 +6,30 @@ import { Link } from 'react-router-dom'
 
 
 let SidebarData = [
-    // {
-    //     title: 'Phòng Ban',
-    //     path: '/',
-    //     icon: <MdIcons.MdSubject />,
-    //     className: 'menu-link',
-    //     iconClassName: 'menu-icon',
-    //     textClassName: 'menu-text'
-    // },
-    // {
-    //     title: 'Môn học',
-    //     path: '/subject',
-    //     icon: <MdIcons.MdSubject />,
-    //     className: 'menu-link',
-    //     iconClassName: 'menu-icon',
-    //     textClassName: 'menu-text'
-    // },
-    // {
-    //     title: 'Giảng viên',
-    //     path: '/teacher',
-    //     icon: <MdIcons.MdSubject />,
-    //     className: 'menu-link',
-    //     iconClassName: 'menu-icon',
-    //     textClassName: 'menu-text'
-    // },
+    {
+        title: 'Phòng Ban',
+        path: '/',
+        icon: <MdIcons.MdSubject />,
+        className: 'menu-link',
+        iconClassName: 'menu-icon',
+        textClassName: 'menu-text'
+    },
+    {
+        title: 'Môn học',
+        path: '/subject',
+        icon: <MdIcons.MdSubject />,
+        className: 'menu-link',
+        iconClassName: 'menu-icon',
+        textClassName: 'menu-text'
+    },
+    {
+        title: 'Giảng viên',
+        path: '/teacher',
+        icon: <MdIcons.MdSubject />,
+        className: 'menu-link',
+        iconClassName: 'menu-icon',
+        textClassName: 'menu-text'
+    },
     {
         title: 'Tài khoản',
         path: '/account',

@@ -5,7 +5,7 @@ import TableComponent from '../../components/TableComponent'
 import { generatePath, useHistory } from 'react-router-dom';
 
 const headCells = [
-    { id: 'id', numeric: true, disablePadding: false, label: 'id' },
+    // { id: 'id', numeric: true, disablePadding: false, label: 'id' },
     { id: 'name', numeric: false, disablePadding: false, label: 'Tên' },
     // { id: 'discription', numeric: false, disablePadding: false, label: 'Mô tả' },
     { id: 'userId', numeric: false, disablePadding: false, type: 'select', label: 'Trưởng ban', data: [] },
